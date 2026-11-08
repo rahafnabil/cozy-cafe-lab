@@ -29,6 +29,27 @@ function handleBackgroundChange(){
     
 }
 bgClrBtnEl.addEventListener("click",handleBackgroundChange)
+/////////////pt5 w\ lvl up/////////
+const cafeSpecList=document.querySelectorAll('.specialty-status')
+const soldoutBtns=document.querySelectorAll('.sold-out-btn')
+
+const statuses=['Available', 'Sold Out', 'Available']
+
+const renderstatus =()=>{
+    statuses.forEach((status,index)=>{
+        cafeSpecList[index].textContent=status
+    })
+
+}
+renderstatus()
+soldoutBtns.forEach((button,index)=>{
+    button.addEventListener('click',()=>{
+       statuses[index]='sold out'
+       renderstatus()
+
+    })
+})
+
 
 
 
